@@ -21,7 +21,7 @@ const Hour = () => {
 
   return (
     <>
-      <p>{time}ART</p>
+      <p className="text-time">{time} ART</p>
     </>
   );
 };
