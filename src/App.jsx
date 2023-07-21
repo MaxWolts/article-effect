@@ -2,6 +2,7 @@ import './App.css'
 import Title from './components/Title/Title'
 import About from './components/About/About'
 import exampleImage from './assets/example.jpg'
+import Footer from './components/Footer/Footer'
 
 function App() {
 
@@ -12,6 +13,7 @@ function App() {
         <img src={exampleImage} alt="main image" className='w-screen'/>
       </div>
       <About />
+      <Footer/>
     </div>
   )
 }
