@@ -1,8 +1,8 @@
 const Services = () => {
 	return (
 		<div>
-			<h4>Services</h4>
-			<div>
+			<h4 className="text-h4responsive font-serif">Services</h4>
+			<div className="mt-1">
 				<ul>
 					<li>
 						<button>(+)Brand</button>
@@ -16,7 +16,7 @@ const Services = () => {
 						</div>
 					</li>
 					<li>
-						<button>(+)Digital</button>
+						<button>(+)Brand</button>
 						<div>
 							<ul>
 								<li>example</li>

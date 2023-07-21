@@ -7,11 +7,11 @@ function App() {
 
   return (
     <div className='bg-slate-950'>
-      <Title />
+      <Title/>
       <div >
         <img src={exampleImage} alt="main image" className='w-screen'/>
       </div>
-      <About/>
+      <About />
     </div>
   )
 }

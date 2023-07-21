@@ -8,7 +8,7 @@ const Title = () => {
         </div>
         <div className="flex flex-col-reverse max-w-[225px] md:flex-col md:justify-between md:max-w-[25%]">
             <Hours/>
-            <h2 className="text-subtitle mb-4">Brand and Digital for Culture, Commerce and Good.</h2>
+            <h2 className="text-subtitle font-serif mb-4">Brand and Digital for Culture, Commerce and Good.</h2>
         </div>
     </div>
   )
