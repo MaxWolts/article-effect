@@ -13,7 +13,7 @@ const Title = () => {
   }, [])
 
   return (
-    <div className=" flex flex-col-reverse gap-[20vh] md:flex-row md:gap-0 md:justify-between">
+    <div className="z-0 sticky top-0 flex flex-col-reverse gap-[20vh] md:flex-row md:gap-0 md:justify-between">
       <div className="border-r border-r-principal">
         <AnimatedTitle />
       </div>

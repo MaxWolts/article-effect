@@ -1,11 +1,15 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 const AnimatedTitle = () => {
   const containerText = useRef(null);
   const flag = useRef(false);
   const originalText = 'Article';
-  const splitText = originalText.split('');
+  const splitText = originalText.split('')
+  const tl = gsap.timeline()
+  gsap.registerPlugin(ScrollTrigger)
+
 
   useEffect(() => {
     if (flag.current === false) {
@@ -26,6 +30,23 @@ const AnimatedTitle = () => {
             }
           );
 					containerText.current?.appendChild(span);
+        });
+        tl.pause()
+        tl.to(containerText.current, {
+          opacity: 0
+        })
+        ScrollTrigger.create({
+          trigger: containerText.current,
+          start: '50% 15%',
+          end: '40% 4%', 
+          onEnter: () => {
+            tl.play();
+            console.log("here");
+          },
+          onLeaveBack: () => {
+            tl.reverse();
+            console.log("reverse");
+          }
         });
       }
     }
