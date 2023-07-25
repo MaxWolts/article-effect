@@ -6,24 +6,23 @@ const AnimatedTitle = () => {
   const flag = useRef(false);
   const originalText = 'Article';
   const splitText = originalText.split('');
-  const tl = gsap.timeline();
 
   useEffect(() => {
     if (flag.current === false) {
       flag.current = true;
       if (!containerText.current?.textContent) {
-        const durations = [0.06, 0.07, 0.08, 0.09, 0.1, 0.11, 0.12,]; // Custom durations for each letter
+        const durations = [.2,.3,.4,.5,.6,.7,.8]; // Custom durations for each letter
         splitText.forEach((letter, index) => {
           const span = document.createElement('span');
           span.className = 'relative';
           span.textContent = letter;
-          tl.delay(.5)
-          tl.fromTo(
+          gsap.fromTo(
             span,
             { opacity: 0 },
             {
               opacity: 1,
-              duration: durations[index], // Use the custom duration for each letter
+              duration: 0.5, // Use the custom duration for each letter
+              delay: durations[index]
             }
           );
 					containerText.current?.appendChild(span);
