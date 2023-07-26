@@ -53,7 +53,7 @@ const AnimatedTitle = () => {
   }, []);
 
   return (
-    <div className="overflow-hidden">
+    <div className="overflow-hidden md:pr-[1.5vw]">
       <h1 ref={containerText} className="text-screenX md:text-responsive leading-[1]"></h1>
     </div>
   );
