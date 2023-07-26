@@ -4,7 +4,7 @@ import icon from '../../assets/react.svg'
 
 const About = () => {
 	return (
-		<section aria-label="about" className="grid grid-cols-2 lg:grid-cols-4 pt-8 px-8 lg:px-0 gap-y-4">
+		<section aria-label="about" className="z-20 relative bg-slate-950 grid grid-cols-2 lg:grid-cols-4 pt-8 px-8 lg:px-0 gap-y-4">
 			<div className="hidden lg:block lg:border-r lg:border-r-principal lg:px-[4vw]">
 				<img src={icon} alt="" />
 			</div>

@@ -9,9 +9,7 @@ function App() {
   return (
     <div className='bg-slate-950'>
       <Title/>
-      <div className='z-20 fixed top-0 right-0 bg-principal rounded-lg px-2 m-4'>
-        <a className='text-black text-time'>Get In Touch</a>
-      </div>
+      
       <div className='z-10 relative'>
         <img src={exampleImage} alt="main image" className='w-screen'/>
       </div>
