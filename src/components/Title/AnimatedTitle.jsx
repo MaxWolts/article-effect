@@ -37,7 +37,7 @@ const AnimatedTitle = () => {
         })
         ScrollTrigger.create({
           trigger: containerText.current,
-          start: '50% 15%',
+          start: '50% 10%',
           end: '40% 4%', 
           onEnter: () => {
             tl.play();
