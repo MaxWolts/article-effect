@@ -1,6 +1,6 @@
 const Clients = () => {
-  return (
-    <div>
+	return (
+		<div>
 			<h4 className="text-h4responsive font-serif">Clients</h4>
 			<div className="mt-1">
 				<ul>
@@ -14,8 +14,8 @@ const Clients = () => {
 					<li>example</li>
 				</ul>
 			</div>
-    </div>
-  )
+		</div>
+	)
 }
 
 export default Clients
