@@ -41,11 +41,9 @@ const AnimatedTitle = () => {
           end: '40% 4%', 
           onEnter: () => {
             tl.play();
-            console.log("here");
           },
           onLeaveBack: () => {
             tl.reverse();
-            console.log("reverse");
           }
         });
       }
