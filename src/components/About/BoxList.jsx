@@ -6,6 +6,7 @@ const BoxList = ({title, items}) => {
 	const [openCloseState, setOpenCloseState] = useState(false)
 	const stateHandle = () => setOpenCloseState(!openCloseState)
 	const refContainer = useRef(null)
+	const controlFirstOpenBox = useRef(false)
 	
 	useEffect(() => {
 		const container = refContainer.current
@@ -13,16 +14,26 @@ const BoxList = ({title, items}) => {
 		const length = items.children.length
 		const firstItem = items.firstChild
 		const contentHeight = firstItem.clientHeight * length
-		console.log();
+
 		if (openCloseState) {
 			gsap.to(container, {
 				height: contentHeight,
 				duration: .5
 			})
+			if (!controlFirstOpenBox.current) {
+				controlFirstOpenBox.current = true
+				items.childNodes.forEach((element, index) => {
+					gsap.fromTo(element, 
+						{opacity: 0, top: "15px"},
+						{opacity: 1, top: "0px", duration:1, delay:0.2*index},
+					)
+				});
+				
+			}
 		} else {
 			gsap.to(container, {
-				height: 0,
-				duration: .5
+				height: 0.1,
+				duration: .2
 			})
 		}
 	}, [openCloseState])
@@ -30,9 +41,9 @@ const BoxList = ({title, items}) => {
 	return (
 		<li>
 			<button onClick={stateHandle}>({openCloseState ? '-' : '+'}) {title}</button>
-			<div ref={refContainer} className="overflow-hidden h-0">
+			<div ref={refContainer} className="overflow-hidden h-0 mb-2">
 				<ul>
-					{items.map(item => <li key={item}>{item}</li>)}
+					{items.map(item => <li key={item} className="relative">{item}</li>)}
 				</ul>
 			</div>
 		</li>
