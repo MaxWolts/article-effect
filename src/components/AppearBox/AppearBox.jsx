@@ -3,7 +3,7 @@ import { gsap } from "gsap"
 import { useEffect, useRef } from 'react'
 import ScrollTrigger from "gsap/ScrollTrigger"
 
-const AppearBox = ({ children, delay, list}) => {
+const AppearBox = ({ children, delay=0, list=false, markers=false, scrollerStart='top 80%', scrollerEnd='bottom 100%', className=''}) => {
 	const containerRef = useRef(null)
 	const controlFlag = useRef(false)
 	gsap.registerPlugin(ScrollTrigger)
@@ -18,8 +18,9 @@ const AppearBox = ({ children, delay, list}) => {
 				setTimeout(() => {
 					ScrollTrigger.create({
 						trigger: containerRef.current,
-						start: 'top 80%',
-						end: 'bottom 100%', 
+						markers: markers,
+						start: scrollerStart,
+						end: scrollerEnd, 
 						onEnter: () => {
 							items.forEach((item, index) => {
 								gsap.to(item, 
@@ -40,13 +41,13 @@ const AppearBox = ({ children, delay, list}) => {
 	},[])
 	if (list) {
 		return (
-			<ul ref={containerRef}>
+			<ul ref={containerRef} className={className}>
 				{children}
 			</ul>
 		)
 	}
 	return (
-		<div ref={containerRef}>
+		<div ref={containerRef} className={className}>
 			{children}
 		</div>
 	)
@@ -55,7 +56,11 @@ const AppearBox = ({ children, delay, list}) => {
 AppearBox.propTypes = {
 	children: PropTypes.any,
 	delay: PropTypes.number,
-	list: PropTypes.bool
+	list: PropTypes.bool,
+	markers: PropTypes.bool,
+	scrollerStart: PropTypes.string,
+	scrollerEnd: PropTypes.string,
+	className: PropTypes.string
 };
 
 export default AppearBox
