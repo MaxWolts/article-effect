@@ -1,9 +1,10 @@
+import AppearBox from "../AppearBox/AppearBox"
 const Clients = () => {
 	return (
 		<div>
 			<h4 className="text-h4responsive font-serif">Clients</h4>
 			<div className="mt-1">
-				<ul>
+				<AppearBox delay={0} list={true}>
 					<li>example</li>
 					<li>example</li>
 					<li>example</li>
@@ -12,7 +13,7 @@ const Clients = () => {
 					<li>example</li>
 					<li>example</li>
 					<li>example</li>
-				</ul>
+				</AppearBox>
 			</div>
 		</div>
 	)

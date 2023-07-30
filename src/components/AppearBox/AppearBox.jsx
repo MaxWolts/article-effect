@@ -3,7 +3,7 @@ import { gsap } from "gsap"
 import { useEffect, useRef } from 'react'
 import ScrollTrigger from "gsap/ScrollTrigger"
 
-const ApearBox = ({ children, delay }) => {
+const AppearBox = ({ children, delay, list}) => {
 	const containerRef = useRef(null)
 	const controlFlag = useRef(false)
 	gsap.registerPlugin(ScrollTrigger)
@@ -38,15 +38,24 @@ const ApearBox = ({ children, delay }) => {
 				}, delay)
 		}
 	},[])
+	if (list) {
+		return (
+			<ul ref={containerRef}>
+				{children}
+			</ul>
+		)
+	}
 	return (
 		<div ref={containerRef}>
 			{children}
 		</div>
 	)
+	
 }
-ApearBox.propTypes = {
+AppearBox.propTypes = {
 	children: PropTypes.any,
-	delay: PropTypes.number
+	delay: PropTypes.number,
+	list: PropTypes.bool
 };
 
-export default ApearBox
+export default AppearBox
