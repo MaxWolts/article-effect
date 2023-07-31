@@ -10,8 +10,8 @@ function App() {
     <div className='bg-slate-950'>
       <Title/>
       
-      <div className='z-10 relative '>
-        <img src={exampleImage} alt="main image" className='w-screen'/>
+      <div className='z-10 relative px-4'>
+        <img src={exampleImage} alt="main image" className='w-screen rounded-lg'/>
       </div>
       <About />
       <Footer/>

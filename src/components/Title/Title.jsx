@@ -26,7 +26,7 @@ const Title = () => {
           <h2 className="text-subtitle font-serif mb-4">Brand and Digital for Culture, Commerce and Good.</h2>
         </div>
       </div>
-      <div ref={getInTouch} className='z-20 fixed top-0 right-0 bg-principal rounded-lg px-2 m-4'>
+      <div ref={getInTouch} className='z-30 fixed top-0 right-0 bg-principal rounded-lg px-2 m-4'>
         <a className='text-black text-time'>Get In Touch</a>
       </div>
     </div>
