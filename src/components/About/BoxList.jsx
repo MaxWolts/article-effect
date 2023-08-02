@@ -1,10 +1,11 @@
-import { useEffect, useState, useRef } from "react"
+import { useEffect, useRef } from "react"
 import PropTypes from 'prop-types';
 import { gsap } from "gsap";
 
-const BoxList = ({title, items}) => {
-	const [openCloseState, setOpenCloseState] = useState(false)
-	const stateHandle = () => setOpenCloseState(!openCloseState)
+const BoxList = ({title, items, controlFunction, numberBox, openCloseState}) => {
+	const stateHandle = () => {
+		controlFunction(numberBox)
+	}
 	const refContainer = useRef(null)
 	const controlFirstOpenBox = useRef(false)
 	
@@ -25,7 +26,7 @@ const BoxList = ({title, items}) => {
 				items.childNodes.forEach((element, index) => {
 					gsap.fromTo(element, 
 						{opacity: 0, top: "15px"},
-						{opacity: 1, top: "0px", duration:1, delay:0.2*index},
+						{opacity: 1, top: "0px", duration:.5, delay:0.2*index},
 					)
 				});
 				
@@ -51,8 +52,11 @@ const BoxList = ({title, items}) => {
 }
 
 BoxList.propTypes = {
-	title: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  controlFunction: PropTypes.func,
+  numberBox: PropTypes.number,
+  openCloseState: PropTypes.bool
 };
 
 export default BoxList

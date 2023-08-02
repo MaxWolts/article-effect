@@ -23,11 +23,14 @@ const AppearBox = ({ children, delay=0, list=false, markers=false, scrollerStart
 						end: scrollerEnd, 
 						onEnter: () => {
 							items.forEach((item, index) => {
-								gsap.to(item, 
+								gsap.fromTo(item, 
+								{top: "15px", position: "relative"},
 								{
+									position: "relative",
+									top: "0px",
 									opacity: 1,
 									duration: .5,
-									delay: 0.1 * index,
+									delay: 0.2 * index,
 								})
 							});
 						},

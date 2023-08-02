@@ -2,12 +2,14 @@ import Services from "./Services"
 import Clients from "./Clients"
 import icon from '../../assets/react.svg'
 import AppearBox from "../AppearBox/AppearBox"
+
 const About = () => {
+
 	return (
-		<section aria-label="about" className="z-20 relative bg-slate-950 grid grid-cols-2 lg:grid-cols-4 pt-8 px-4 lg:px-0 gap-y-4">
+		<section aria-label="about" className="z-20 relative bg-slate-950 grid grid-cols-2 min-h-[25rem] lg:grid-cols-4 pt-8 px-4 lg:px-0 gap-y-4">
 			
 			<div className="hidden lg:block lg:border-r lg:border-r-principal lg:px-[2vw]">
-				<AppearBox delay={0}>
+				<AppearBox delay={1000}>
 					<img src={icon} alt="" />
 				</AppearBox>
 			</div>
